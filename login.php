@@ -41,13 +41,13 @@ and open the template in the editor.
         ?>
 
         <!-- CORPO -->
-        <form action="" method="post">
+        <form action="login_verificar.php" method="post">
             <div id="body" class="contact">
                 <div class="footer">
                     <div class="contact">
 
                         <h1>ACESSAR MODO ADMINISTRADOR</h1>
-
+                        <form action="login_verificar.php" method="post">
                         <ol>
                             <li>
                                 <input type="text" name="txtLoginUsuario"  class="textbox" placeholder="Login do usuário" /></li>
@@ -62,7 +62,7 @@ and open the template in the editor.
 
 
                         </ol>
-
+                        </form>
 
 
                     </div>
