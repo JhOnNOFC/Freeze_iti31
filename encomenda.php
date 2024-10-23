@@ -63,8 +63,25 @@ and open the template in the editor.
                             <li>
 
                                 <select class="dropdown" name="listaProduto">
-                                    <option></option>
-                                </select>
+                                <?php
+                                    //PASSO 1: Incluir as config de BDA
+                                     include "conexao_bd.php";
+                                     //PASSO 2: Montar o SQL para buscar os Produtos
+                                     $sql = "SELECT * FROM produto ORDER BY descricao";
+                                     $dados = retornarDados($sql);            
+
+                                     while($linha = mysqli_fetch_assoc($dados))
+                                     {
+                                     ?>
+                                         <option>
+                                         <?php
+                                             echo $linha["descricao"];
+                                         ?>
+                                         </option>
+                                     <?php
+                                     }
+                                     ?>
+                                 </select>
                             </li>
                             <li>
                                 <select name="listaQuantidade"  class="dropdown">
@@ -81,7 +98,22 @@ and open the template in the editor.
                             <li>
 
                                 <select name="listaFormaPagamento"  class="dropdown">
-                                    <option></option>
+                                <?php
+                                     //PASSO 2: Montar o SQL para buscar as formas de pagamentos
+                                     $sql = "SELECT * FROM forma_pagamento ORDER BY descricao";
+                                     $dados = retornarDados($sql);            
+
+                                     while($linha = mysqli_fetch_assoc($dados))
+                                     {
+                                     ?>
+                                         <option>
+                                         <?php
+                                             echo $linha["descricao"];
+                                         ?>
+                                         </option>
+                                     <?php
+                                     }
+                                     ?>
 
                                 </select>
 
